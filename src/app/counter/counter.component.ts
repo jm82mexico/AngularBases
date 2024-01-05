@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './counter.component.css'
 })
 export class CounterComponent {
+  public counter : number = 10;
+  
+  public acumular(valor: number) {
+    this.counter += valor;
+  }
 
+  public reset(): void {
+    this.counter = 10;
+  }
 }
