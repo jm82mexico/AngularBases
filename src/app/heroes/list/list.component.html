@@ -1,7 +1,17 @@
+<div
+*ngIf="heroDeleted; else nothingDeleted"
+>
+<div>Hero borrado: <small class="text-danger">{{ heroDeleted }}</small></div>
 
-<div>Hero borrado</div>
+</div>
+<ng-template #nothingDeleted>
+  <h3>No ha borrado nada.</h3>
+</ng-template>
 
-<button class="btn btn-danger">borrar heroe</button>
+<button 
+*ngIf="heroesNames.length > 0"
+(click)="deleteHero()"
+class="btn btn-danger">borrar heroe</button>
 
 <ul class="mt-2 list-group">
   <li
