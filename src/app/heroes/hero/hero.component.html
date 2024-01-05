@@ -13,9 +13,11 @@
 
 
 <button 
+*ngIf="name !== 'SpiderMan'"
 (click)="changeName()"
 class="btn btn-outline-primary">Cambiar nombre</button>
 <button 
+*ngIf="age !== 16"
 (click)="changeAge()"
 class="btn btn-outline-secondary" 
 >Cambiar edad</button>
