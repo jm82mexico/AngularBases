@@ -17,4 +17,17 @@ export class HeroComponent {
     return `${this.name} - ${this.age}`;
   }
 
+  public changeName(): void {
+    this.name = 'SpiderMan';
+  }
+
+  public changeAge(): void {
+    this.age = 16;
+  }
+
+  public resetForm(): void {
+    this.name = 'IronMan';
+    this.age = 45;
+  }
+
 }
