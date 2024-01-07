@@ -33,5 +33,11 @@ export class MainPageComponent {
         }
     ];
 
+    onNewCharacter(character: Character): void {
+        //this.characters.push(character);
+        console.log('mainCharacter');
+        console.log(character);
+    }
+
 
 }

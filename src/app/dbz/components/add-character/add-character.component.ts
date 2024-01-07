@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Character } from '../../interfaces/character.interface';
 
 @Component({
   selector: 'dbz-add-character',
@@ -6,5 +7,28 @@ import { Component } from '@angular/core';
   styleUrl: './add-character.component.css'
 })
 export class AddCharacterComponent {
+
+  @Output()
+  public onNewCharacter: EventEmitter<Character>  = new EventEmitter();
+
+  //esto es lo que recibe el formulario y lo que se va a emitir
+  public character: Character = {
+    name: 'Prueba',
+    power: 0
+  };
+
+  emitCharacter():void{
+    console.log(this.character);
+    if(this.character.name.trim().length === 0){
+      return;
+    }
+    this.onNewCharacter.emit(this.character);
+    this.character = {
+      name: '',
+      power: 0
+    }
+  }
+  
+  
 
 }
