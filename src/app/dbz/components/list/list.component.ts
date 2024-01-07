@@ -9,16 +9,13 @@ import { Character } from '../../interfaces/character.interface';
 export class ListComponent {
   @Input()
   //si no se mandan datos, se inicializa con un arreglo vacio
-  public characterList: Character[] = [{
-    name: 'Trunks',
-    power: 15
-  }];
+  public characterList: Character[] = [];
 
   @Output()
-  public onDelete: EventEmitter<number> = new EventEmitter();
+  public onDelete: EventEmitter<string> = new EventEmitter();
 
 
-  onDeleteCharacter(id?:number):void{
+  onDeleteCharacter(id?:string):void{
     console.log('Borrando', id);
     this.onDelete.emit(id);
   }
