@@ -33,11 +33,18 @@ export class MainPageComponent {
         }
     ];
 
+    onDeletedCharacter(id: number): void {
+        console.log('BorradoMain');
+        console.log('Borrando', id);
+        this.characters.splice(id, 1);
+    }
+
     onNewCharacter(character: Character): void {
-        //this.characters.push(character);
+        this.characters.push(character);
         console.log('mainCharacter');
         console.log(character);
     }
+
 
 
 }
